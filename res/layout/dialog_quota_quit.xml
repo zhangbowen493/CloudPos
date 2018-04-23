@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/act_bg"
+    android:padding="130dp" >
+    
+    <LinearLayout 
+        android:layout_height="144dp"
+        android:layout_width="match_parent"
+        android:background="@drawable/et_bg"
+        android:gravity="center_vertical"
+        >
+        <ImageView 
+            android:src="@drawable/icon_quota_quit"
+            android:layout_width="124dp"
+            android:layout_height="wrap_content"
+            />
+        <EditText
+        android:id="@+id/edt_dialog_quota_password"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:textSize="48sp"
+        android:textColor="#fff"
+        android:hint="请输入密码"
+        android:singleLine="true"
+        android:textColorHint="#fff"
+        android:inputType="number"
+        android:ems="10" >
+
+    </EditText>
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="123dp"
+        android:layout_marginTop="100dp"
+        >
+        <Button
+        android:id="@+id/btn_dialog_quota_quit"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_marginRight="20dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/btn_bg_green"
+        android:textColor="#fff"
+        android:textSize="52sp"
+        android:text="确认" />
+        <Button
+        android:id="@+id/btn_dialog_quota_cancel"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:background="@drawable/btn_bg_green"
+        android:textColor="#fff"
+        android:textSize="52sp"
+        android:text="取消" />
+    </LinearLayout>
+    
+</LinearLayout>

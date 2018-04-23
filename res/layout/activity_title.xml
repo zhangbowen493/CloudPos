@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/widget_h"
+    android:background="@color/act_top" 
+    android:id="@+id/rl_title">
+
+    <TextView
+        android:id="@+id/activity_title_tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/white"
+        android:textSize="@dimen/tv_size_high" />
+    <TextView
+        android:id="@+id/tv_numb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text=""
+        android:layout_toRightOf="@+id/activity_title_btn_back"
+        android:layout_marginLeft="50dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/white"
+        android:textSize="@dimen/tv_size_high" />
+
+    <Button
+        android:id="@+id/activity_title_btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/widget_ml_low"
+        android:drawableLeft="@drawable/back"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="@dimen/tv_size_high"
+        android:background="@null"
+         />
+
+    <TextView
+        android:id="@+id/activity_title_text_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/logo"
+        android:layout_marginRight="@dimen/widget_mr_low"
+        android:textColor="@color/white"
+        android:textSize="@dimen/tv_size_high"
+        android:visibility="visible" />
+
+</RelativeLayout>

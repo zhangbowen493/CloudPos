@@ -1,0 +1,323 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/act_bg"
+    android:orientation="vertical"
+    tools:context=".ManageActivity" >
+
+    <include
+        android:id="@+id/act_top"
+        layout="@layout/activity_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="341dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/menu_rl_pb"
+            android:paddingTop="@dimen/menu_rl_pt" >
+
+            <Button
+                android:id="@+id/btn_manage"
+                android:layout_width="@dimen/menu_3"
+                android:layout_height="@dimen/menu_3"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/menu_manage"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_manage"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/menu_tv_mt"
+                android:text="管理"
+                android:textColor="#fff"
+                android:textSize="42dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="341dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/menu_rl_pb"
+            android:paddingTop="@dimen/menu_rl_pt" >
+
+            <Button
+                android:id="@+id/btn_pop_consume"
+                android:layout_width="@dimen/menu_3"
+                android:layout_height="@dimen/menu_3"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/menu_consume"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_pop_consume"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/menu_tv_mt"
+                android:text="定额消费"
+                android:textColor="#fff"
+                android:textSize="42dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="341dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/menu_rl_pb"
+            android:paddingTop="@dimen/menu_rl_pt" >
+
+            <Button
+                android:id="@+id/btn_poo_standard"
+                android:layout_width="@dimen/menu_3"
+                android:layout_height="@dimen/menu_3"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/menu_consume"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_poo_standard"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/menu_tv_mt"
+                android:text="标准消费"
+                android:textColor="#fff"
+                android:textSize="42dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="341dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/menu_rl_pb"
+            android:paddingTop="@dimen/menu_rl_pt" >
+
+            <Button
+                android:id="@+id/btn_breakfast"
+                android:layout_width="@dimen/menu_3"
+                android:layout_height="@dimen/menu_3"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/menu_consume"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_breakfast"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/menu_tv_mt"
+                android:text="早餐消费"
+                android:textColor="#fff"
+                android:textSize="42dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="341dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/menu_rl_pb"
+            android:paddingTop="@dimen/menu_rl_pt" 
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/btn_help"
+                android:layout_width="@dimen/menu_3"
+                android:layout_height="@dimen/menu_3"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/menu_help"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_help"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/menu_tv_mt"
+                android:text="帮助"
+                android:textColor="#fff"
+                android:textSize="42dp" />
+        </RelativeLayout>
+
+        <!--
+             <Button
+            android:id="@+id/btn_consume"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="食堂消费" />     	 -->
+
+
+        <!--
+             <Button
+            android:id="@+id/btn_help"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="帮助" />        -->
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" 
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/btn_pay_scan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="扫码付" />
+
+        <Button
+            android:id="@+id/btn_pay_ftf"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="当面付" />
+
+        <Button
+            android:id="@+id/btn_expense"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="消费" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <Button
+            android:id="@+id/btn_qiandao"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:background="@drawable/menu_manage"
+            android:scaleType="centerCrop"
+            android:text="签到" />
+
+        <Button
+            android:id="@+id/btn_qiantui"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:background="@drawable/menu_consume"
+            android:scaleType="centerCrop"
+            android:text="签退" />
+
+        <Button
+            android:id="@+id/btn_pijiesuan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:background="@drawable/menu_help"
+            android:scaleType="centerCrop"
+            android:text="批结算" />
+
+        <Button
+            android:id="@+id/btn_pishangsong"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:background="@drawable/menu_help"
+            android:scaleType="centerCrop"
+            android:text="批上送" />
+
+        <Button
+            android:id="@+id/btn_liushuitongzhi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:background="@drawable/menu_help"
+            android:scaleType="centerCrop"
+            android:text="流水通知" />
+
+        <Button
+            android:id="@+id/btn_POScanshuchuandi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:background="@drawable/menu_help"
+            android:scaleType="centerCrop"
+            android:text="POS参数传递" />
+
+        <Button
+            android:id="@+id/btn_huixiang"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:background="@drawable/menu_help"
+            android:scaleType="centerCrop"
+            android:text="回响测试" />
+
+        <Button
+            android:id="@+id/btn_POSzhuangtaishangsong"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:background="@drawable/menu_help"
+            android:scaleType="centerCrop"
+            android:text="POS状态上送" />
+
+        <Button
+            android:id="@+id/btn_xiazai"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:background="@drawable/menu_help"
+            android:scaleType="centerCrop"
+            android:text="下载" />
+
+        <Button
+            android:id="@+id/btn_lixianjiaoyi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:background="@drawable/menu_help"
+            android:scaleType="centerCrop"
+            android:text="离线交易" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberPassword"
+        android:visibility="gone" >
+
+        <requestFocus />
+    </EditText>
+
+</LinearLayout>

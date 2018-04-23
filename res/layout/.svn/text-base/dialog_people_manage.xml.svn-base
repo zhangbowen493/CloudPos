@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/act_bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:id="@+id/tv_dialog_people_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="添加操作员"
+        android:textSize="38sp"
+        android:textColor="#fff"
+        />
+    
+    <LinearLayout 
+        android:layout_height="100dp"
+        android:layout_marginTop="56dp"
+	    android:layout_marginBottom="35dp"
+	    android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_width="match_parent"
+        android:background="@drawable/et_bg"
+        android:gravity="center_vertical"
+        >
+        <ImageView 
+            android:src="@drawable/icon_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <EditText
+        android:id="@+id/edt_dialog_people_account"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:textSize="28sp"
+        android:textColor="#fff"
+        android:hint="请输入编号"
+        android:textColorHint="#fff"
+        android:inputType="number"
+        android:singleLine="true"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+    </LinearLayout>
+    
+    
+    <LinearLayout 
+        android:layout_height="100dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:background="@drawable/et_bg"
+        android:gravity="center_vertical"
+        >
+        <ImageView 
+            android:src="@drawable/icon_lock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <EditText
+        android:id="@+id/edt_dialog_people_password"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:textSize="28sp"
+        android:textColor="#fff"
+        android:textColorHint="#fff"
+        android:hint="请输入密码"
+        android:singleLine="true"
+        android:inputType="number"
+        android:ems="10" >
+
+       
+    </EditText>
+    </LinearLayout>
+
+    <LinearLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:layout_marginBottom="48dp"
+        android:layout_marginLeft="222dp"
+        android:layout_marginRight="222dp"
+        android:orientation="horizontal"
+        >
+        <ImageView 
+            android:id="@+id/iv_dialog_people_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="55dp"
+            android:src="@drawable/icon_quxiao"
+            />
+        <ImageView 
+            android:id="@+id/iv_dialog_people_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_ok"
+            />
+    </LinearLayout>
+
+</LinearLayout>

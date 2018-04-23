@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 181
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/974/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/tool8583
+END
+Packet8583Config.java
+K 25
+svn:wc:ra_dav:version-url
+V 203
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/tool8583/Packet8583Config.java
+END
+Field8583Helper.java
+K 25
+svn:wc:ra_dav:version-url
+V 202
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/tool8583/Field8583Helper.java
+END
+Packet8583ConfigSignIn.java
+K 25
+svn:wc:ra_dav:version-url
+V 209
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/tool8583/Packet8583ConfigSignIn.java
+END
+Packet8583SubfieldConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 211
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/tool8583/Packet8583SubfieldConfig.java
+END
+TcpClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 196
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/tool8583/TcpClient.java
+END
+Packet8583Field.java
+K 25
+svn:wc:ra_dav:version-url
+V 202
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/tool8583/Packet8583Field.java
+END
+FieldType.java
+K 25
+svn:wc:ra_dav:version-url
+V 196
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/tool8583/FieldType.java
+END
+ResponseDataPacket.java
+K 25
+svn:wc:ra_dav:version-url
+V 205
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/tool8583/ResponseDataPacket.java
+END
+GetProp.java
+K 25
+svn:wc:ra_dav:version-url
+V 194
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/tool8583/GetProp.java
+END
+MacUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 195
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/tool8583/MacUtils.java
+END
+DesECBencrypt.java
+K 25
+svn:wc:ra_dav:version-url
+V 201
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/1219/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/tool8583/DesECBencrypt.java
+END
+FieldCodeType.java
+K 25
+svn:wc:ra_dav:version-url
+V 200
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/tool8583/FieldCodeType.java
+END
+Connect.java
+K 25
+svn:wc:ra_dav:version-url
+V 194
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/974/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/tool8583/Connect.java
+END
+Process8583Packet.java
+K 25
+svn:wc:ra_dav:version-url
+V 204
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/tool8583/Process8583Packet.java
+END
+ProcessException.java
+K 25
+svn:wc:ra_dav:version-url
+V 203
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/tool8583/ProcessException.java
+END
+ConstentVar.java
+K 25
+svn:wc:ra_dav:version-url
+V 198
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/tool8583/ConstentVar.java
+END
+ProcessHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 200
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/tool8583/ProcessHelper.java
+END
+ProcessPacket.java
+K 25
+svn:wc:ra_dav:version-url
+V 200
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/tool8583/ProcessPacket.java
+END
+Packet8583ConvertTable.java
+K 25
+svn:wc:ra_dav:version-url
+V 209
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/tool8583/Packet8583ConvertTable.java
+END
+Field55Test.java
+K 25
+svn:wc:ra_dav:version-url
+V 198
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/tool8583/Field55Test.java
+END
+RequestDataPacket.java
+K 25
+svn:wc:ra_dav:version-url
+V 204
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/tool8583/RequestDataPacket.java
+END
+Test.java
+K 25
+svn:wc:ra_dav:version-url
+V 191
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/tool8583/Test.java
+END
+CodeUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 196
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/tool8583/CodeUtils.java
+END

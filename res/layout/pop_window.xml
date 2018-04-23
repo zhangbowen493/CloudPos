@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="25dp"
+    android:background="@drawable/bg_rili"
+    android:orientation="horizontal"
+     >
+    <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="341dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/menu_rl_pb"
+            android:paddingTop="@dimen/menu_rl_pt" >
+
+            <Button
+                android:id="@+id/btn_pop_consume"
+                android:layout_width="@dimen/menu_3"
+                android:layout_height="@dimen/menu_3"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/menu_consume"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_pop_consume"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/menu_tv_mt"
+                android:text="定额消费"
+                android:textColor="#fff"
+                android:textSize="42dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="341dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_marginLeft="40dp"
+            android:paddingBottom="@dimen/menu_rl_pb"
+            android:paddingTop="@dimen/menu_rl_pt" >
+
+            <Button
+                android:id="@+id/btn_poo_standard"
+                android:layout_width="@dimen/menu_3"
+                android:layout_height="@dimen/menu_3"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/menu_consume"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_poo_standard"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/menu_tv_mt"
+                android:text="标准消费"
+                android:textColor="#fff"
+                android:textSize="42dp" />
+        </RelativeLayout>
+
+</LinearLayout>

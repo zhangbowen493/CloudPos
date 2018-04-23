@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 175
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/1132/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/com/wd/liandidemo/RF
+END
+PbocUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 189
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/com/wd/liandidemo/RF/PbocUtils.java
+END
+AbstractSample.java
+K 25
+svn:wc:ra_dav:version-url
+V 194
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/com/wd/liandidemo/RF/AbstractSample.java
+END
+PBOClistener.java
+K 25
+svn:wc:ra_dav:version-url
+V 192
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/com/wd/liandidemo/RF/PBOClistener.java
+END
+RSAUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 188
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/com/wd/liandidemo/RF/RSAUtils.java
+END
+UPCardReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 193
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/1132/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/com/wd/liandidemo/RF/UPCardReader.java
+END
+RFDriversListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 197
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/com/wd/liandidemo/RF/RFDriversListener.java
+END
+PBOC_TL.java
+K 25
+svn:wc:ra_dav:version-url
+V 187
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/com/wd/liandidemo/RF/PBOC_TL.java
+END
+PBOC_TLV.java
+K 25
+svn:wc:ra_dav:version-url
+V 188
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/com/wd/liandidemo/RF/PBOC_TLV.java
+END
+RFCardActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 194
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/com/wd/liandidemo/RF/RFCardActivity.java
+END
+RFCardDriversUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 197
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/com/wd/liandidemo/RF/RFCardDriversUtil.java
+END
+RFCardReaderSample.java
+K 25
+svn:wc:ra_dav:version-url
+V 198
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/com/wd/liandidemo/RF/RFCardReaderSample.java
+END
+RFUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 188
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/1017/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/com/wd/liandidemo/RF/RFUtils.java
+END
+CodeUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 189
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/com/wd/liandidemo/RF/CodeUtils.java
+END

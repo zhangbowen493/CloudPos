@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <color name="activity_bg">#f6f5fa</color>
+    
+    <color name="white">#FFFFFF</color>
+    <color name="bt_press">#FF0859DA</color>
+    <color name="bt_default">#FF1CACE2</color>
+    <color name="block">#FFEFE8E8</color>
+    <color name="gray">#FF808080</color>
+    <color name="act_top">#1F243C</color>
+    <color name="act_bg">#384163</color>
+    <color name="green_bg">#0FA8AB</color>
+    
+    <color name="black">#3f3f3f</color>
+    <color name="orange">#FC8436</color>
+    <color name="blue_navy">#145895</color>
+    <color name="transparent">#00000000</color>
+    
+    <!-- 蓝色正常值：#098fd3 -->
+    <color name="blue_normal">#44AFFD</color>
+    <!-- 蓝色按键暗色值:#3f87ac -->
+    <color name="blue_pressed">#44affd</color>
+    <!-- 按键灰色值：cdcdcd -->
+    <color name="gray_disabled">#cdcdcd</color>
+    
+    <color name="rad">#ff0000</color>
+    
+    <color name="check_green">#3cff00</color>
+    <color name="check_rad">#e52516</color>
+    
+</resources>

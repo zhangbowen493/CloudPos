@@ -1,0 +1,126 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/act_bg"
+    android:orientation="vertical"
+    tools:context=".QueryStatusActivity" >
+    <include
+            android:id="@+id/act_top"
+            layout="@layout/activity_title" />
+    
+
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="#10A9AA"
+        >
+        <ImageView 
+            android:src="@drawable/icon_diannao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="30dp"
+            />
+        <LinearLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="26dp"
+            >
+            <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="终端号："
+            android:textSize="30sp"
+            android:textColor="#fff"
+            />
+            <TextView 
+                android:id="@+id/tv_query_status_terminal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12345678"
+            android:textSize="30sp"
+            android:textColor="#fff"
+            />
+            
+        </LinearLayout>
+        
+    </LinearLayout>
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <LinearLayout 
+            android:id="@+id/ll1"
+        android:layout_width="wrap_content"
+        android:layout_height="267dp"
+        android:orientation="vertical"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="97dp"
+        >
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="132dp"
+            android:gravity="center_vertical"
+            android:text="最后上送时间："
+            android:textColor="#fff"
+            android:textSize="30sp"
+            android:drawableLeft="@drawable/icon_lasttime"
+            />
+        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="132dp"
+            android:gravity="center_vertical"
+            android:text="未上传条数："
+            android:textColor="#fff"
+            android:layout_marginTop="3dp"
+            android:textSize="30sp"
+            android:drawableLeft="@drawable/icon_tiaoshu"
+            />
+    </LinearLayout>
+    
+        <LinearLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="267dp"
+            android:layout_toRightOf="@id/ll1"
+            android:orientation="vertical"
+            >
+            <TextView 
+                android:id="@+id/tv_query_status_lasttime"
+                android:layout_width="wrap_content"
+                android:layout_height="132dp"
+                android:textSize="30sp"
+                android:gravity="center_vertical"
+                android:text="2016/06.22.11:31:12"
+                android:textColor="#4dc6f6"
+                />
+            <TextView 
+                android:id="@+id/tv_query_status_unupload"
+                android:layout_width="wrap_content"
+                android:layout_height="132dp"
+                android:layout_marginTop="3dp"
+                android:textSize="30sp"
+                android:gravity="center_vertical"
+                android:text="3"
+                android:textColor="#fdb14e"
+                />
+        </LinearLayout>
+        <View 
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#1e263d"
+            android:layout_marginTop="132dp"
+            />
+    </RelativeLayout>
+    <View 
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="#1e263d"
+            />
+
+</LinearLayout>

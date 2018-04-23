@@ -1,0 +1,88 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/act_bg"
+    android:orientation="vertical"
+    tools:context="cn.wonders.pos_qdg.activity.SettingUpActivity" >
+
+     <include
+            android:id="@+id/act_top"
+            layout="@layout/activity_title" />
+     
+    <!-- <Button
+        android:id="@+id/btn_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="参数设置"
+        android:textColor="@color/white"
+        android:background="@null"
+        android:drawableTop="@drawable/ic_launcher" /> -->
+        
+         <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        
+        <RelativeLayout 
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="343dp"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/menu_rl_pt"
+            android:paddingBottom="@dimen/menu_rl_pb"
+            android:gravity="center_horizontal"
+            >
+            <Button
+            android:id="@+id/btn_setting"
+            android:layout_width="@dimen/menu_4"
+            android:layout_height="@dimen/menu_4"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerCrop"
+            android:background="@drawable/icon_parameter_setting"
+             />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_setting"
+                android:text="参数设置"
+                android:layout_centerHorizontal="true"
+                android:textColor="#fff"
+                android:layout_marginTop="@dimen/menu_tv_mt"
+                android:textSize="42dp" />
+
+        </RelativeLayout>
+        <RelativeLayout 
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="343dp"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/menu_rl_pt"
+            android:paddingBottom="@dimen/menu_rl_pb"
+            android:gravity="center_horizontal"
+            >
+         </RelativeLayout>
+        <RelativeLayout 
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="343dp"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/menu_rl_pt"
+            android:paddingBottom="@dimen/menu_rl_pb"
+            android:gravity="center_horizontal"
+            >
+         </RelativeLayout>
+        <RelativeLayout 
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="343dp"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/menu_rl_pt"
+            android:paddingBottom="@dimen/menu_rl_pb"
+            android:gravity="center_horizontal"
+            >
+         </RelativeLayout>
+      </LinearLayout>
+
+</LinearLayout>

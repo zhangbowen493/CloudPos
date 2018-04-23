@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 176
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/1119/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/db
+END
+BlackListDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 194
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/1025/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/db/BlackListDao.java
+END
+TradingHistoryDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 199
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/1025/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/db/TradingHistoryDao.java
+END
+QuotaRateDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 194
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/1219/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/db/QuotaRateDao.java
+END
+TradingHistoryHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 201
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/954/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/db/TradingHistoryHelper.java
+END
+WhiteListDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 194
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/1025/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/db/WhiteListDao.java
+END
+CiDianDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 191
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/1025/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/db/CiDianDao.java
+END
+BlackListDBHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 198
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/db/BlackListDBHelper.java
+END
+TradingAbnormalDBHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 204
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/958/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/db/TradingAbnormalDBHelper.java
+END
+UserDatabaseHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 199
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/db/UserDatabaseHelper.java
+END
+WorkTimeParmaDatabaseHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 208
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/db/WorkTimeParmaDatabaseHelper.java
+END
+TradingAbnormalDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 200
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/1119/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/db/TradingAbnormalDao.java
+END
+WorkTimeParmaDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 198
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/1025/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/db/WorkTimeParmaDao.java
+END
+TradingDBHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 196
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/974/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/db/TradingDBHelper.java
+END
+WhiteListDBHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 198
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/db/WhiteListDBHelper.java
+END
+UserDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 189
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/1025/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/db/UserDao.java
+END
+QuotaRateDBHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 198
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/db/QuotaRateDBHelper.java
+END
+CiDianDBHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 195
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/db/CiDianDBHelper.java
+END
+TradingDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 192
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/1219/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/db/TradingDao.java
+END

@@ -1,0 +1,283 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/act_bg"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/act_top"
+        layout="@layout/activity_title" />
+
+    <!--
+    <Button
+        android:id="@+id/btn_application"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="应用"
+        android:textColor="@color/white"
+        android:background="@null"
+        android:drawableTop="@drawable/ic_launcher" 
+        android:layout_below="@+id/act_top"/>
+    <Button
+        android:id="@+id/btn_system"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="系统"
+        android:textColor="@color/white"
+        android:background="@null"
+        android:drawableTop="@drawable/ic_launcher"
+        android:layout_toRightOf="@+id/btn_application"
+        android:layout_below="@+id/act_top"/>
+    <Button
+        android:id="@+id/btn_download"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="下传"
+        android:textColor="@color/white"
+        android:background="@null"
+        android:drawableTop="@drawable/ic_launcher" 
+        android:layout_below="@+id/act_top"
+        android:layout_toRightOf="@+id/btn_system"/>
+    -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="343dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/menu_rl_pb"
+            android:paddingTop="@dimen/menu_rl_pt" >
+
+            <Button
+                android:id="@+id/btn_application"
+                android:layout_width="@dimen/menu_4"
+                android:layout_height="@dimen/menu_4"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/icon_manage"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_application"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/menu_tv_mt"
+                android:text="应用"
+                android:textColor="#fff"
+                android:textSize="42dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="343dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/menu_rl_pb"
+            android:paddingTop="@dimen/menu_rl_pt" >
+
+            <Button
+                android:id="@+id/btn_system"
+                android:layout_width="@dimen/menu_4"
+                android:layout_height="@dimen/menu_4"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/icon_system"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_system"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/menu_tv_mt"
+                android:text="系统"
+                android:textColor="#fff"
+                android:textSize="42dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="343dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/menu_rl_pb"
+            android:paddingTop="@dimen/menu_rl_pt" >
+
+            <Button
+                android:id="@+id/btn_download"
+                android:layout_width="@dimen/menu_4"
+                android:layout_height="@dimen/menu_4"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/icon_download"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_download"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/menu_tv_mt"
+                android:text="下传"
+                android:textColor="#fff"
+                android:textSize="42dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="343dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/menu_rl_pb"
+            android:paddingTop="@dimen/menu_rl_pt" >
+
+            <Button
+                android:id="@+id/btn_money_setting"
+                android:layout_width="@dimen/menu_4"
+                android:layout_height="@dimen/menu_4"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/menu_clearing"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_money_setting"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/menu_tv_mt"
+                android:text="金额设置"
+                android:textColor="#fff"
+                android:textSize="42dp" />
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="343dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/menu_rl_pb"
+            android:paddingTop="@dimen/menu_rl_pt" >
+
+            <Button
+                android:id="@+id/btn_shanghu"
+                android:layout_width="@dimen/menu_4"
+                android:layout_height="@dimen/menu_4"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/menu_manage"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_shanghu"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/menu_tv_mt"
+                android:text="商户"
+                android:textColor="#fff"
+                android:textSize="42dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="343dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/menu_rl_pb"
+            android:paddingTop="@dimen/menu_rl_pt" 
+            android:visibility="invisible">
+
+            <Button
+                android:id="@+id/btn_2"
+                android:layout_width="@dimen/menu_4"
+                android:layout_height="@dimen/menu_4"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/icon_system"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/menu_tv_mt"
+                android:text="系统"
+                android:textColor="#fff"
+                android:textSize="42dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="343dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/menu_rl_pb"
+            android:paddingTop="@dimen/menu_rl_pt" 
+            android:visibility="invisible">
+
+            <Button
+                android:id="@+id/btn_3"
+                android:layout_width="@dimen/menu_4"
+                android:layout_height="@dimen/menu_4"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/icon_download"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_3"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/menu_tv_mt"
+                android:text="下传"
+                android:textColor="#fff"
+                android:textSize="42dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="343dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/menu_rl_pb"
+            android:paddingTop="@dimen/menu_rl_pt" 
+            android:visibility="invisible">
+
+            <Button
+                android:id="@+id/btn_4"
+                android:layout_width="@dimen/menu_4"
+                android:layout_height="@dimen/menu_4"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/menu_clearing"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_4"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/menu_tv_mt"
+                android:text="金额设置"
+                android:textColor="#fff"
+                android:textSize="42dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

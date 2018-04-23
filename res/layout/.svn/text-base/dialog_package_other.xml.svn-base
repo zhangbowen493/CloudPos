@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="60dp"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+    
+     <TextView
+        android:id="@+id/tv_dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        
+        android:text="请输入金额"
+        android:textColor="#faa32f"
+        android:textSize="50sp" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/edt_dialog_new_value"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="8dp"
+        android:singleLine="true"
+        android:hint="单位/元"
+        android:digits="1234567890."
+        android:inputType="numberDecimal"
+        android:textSize="18sp" />
+        
+        
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp" >
+
+        <Button
+            android:id="@+id/other_dialog_back"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:maxWidth="420dp"
+            android:minWidth="120dp"
+            android:textSize="50sp"
+            android:text="取消"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/other_dialog_sure"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:maxWidth="420dp"
+            android:minWidth="120dp"
+            android:textSize="50sp"
+            android:text="保存"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+</LinearLayout>

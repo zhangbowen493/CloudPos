@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/toast_layout_root"
+    android:orientation="horizontal"
+    android:background="@drawable/my_border" >
+     <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:text="这是一个自定义背景颜色的提示框"
+        android:textColor="@color/white"
+        android:textSize="35sp" >
+    </TextView>
+
+</LinearLayout>
+ 

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.wonders.pos_qdg"
+    android:versionCode="2"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="17"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!-- 打印机权限 -->
+    <uses-permission android:name="android.permission.CLOUDPOS_PRINTER" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.CLOUDPOS_DISABLE_HOME_KEY" />
+
+    <!-- 允许访问Wi-Fi网络状态信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" >
+    </uses-permission>
+    <!-- 允许改变Wi-Fi连接状态 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <!-- 允许访问有关GSM有关信息 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+    </uses-permission>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+
+    <!-- 允许读取电话的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.READ_LOGS" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- 读取手机联系人 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- 单元测试 -->
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:label="Test Sqlite"
+        android:targetPackage="cn.wonders.pos_qdg" />
+
+    <application
+        android:name="cn.wonders.pos_qdg.app.CloudposApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Black.NoTitleBar" >
+        <service android:name="cn.wonders.pos_qdg.service.UpLiushuiService" >
+        </service>
+        <service android:name="cn.wonders.pos_qdg.service.ClearTradingService" >
+        </service>
+        <service android:name="cn.wonders.pos_qdg.service.UpTrandToServerLayUp" >
+        </service>
+        <service android:name="cn.wonders.pos_qdg.service.UpgradeService" >
+            <intent-filter>
+                <action android:name="cn.wonders.pos.Service.UPGRAGE_SERVICE" />
+
+                <category android:name="android.intent.category.default" />
+            </intent-filter>
+        </service>
+        <!-- 用于引入测试库 -->
+        <uses-library android:name="android.test.runner" />
+
+        <!-- 注册系统广播接收器 -->
+
+        <receiver android:name="cn.wonders.pos.broadcast.BootBroadcastReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+
+                <category android:name="android.intent.category.HOME" />
+            </intent-filter>
+        </receiver>
+        <!-- <receiver android:name="cn.wonders.pos.broadcast.NetworkChangeReceiver" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver> -->
+        <receiver android:name="cn.wonders.pos.broadcast.StartReceiver" >
+            <intent-filter>
+                <action android:name="install_and_start" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="cn.wonders.pos_qdg.activity.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="cn.wonders.pos_qdg.activity.ConsumeQuotaActivity"
+            android:label="@string/title_activity_quota_consume"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="cn.wonders.pos_qdg.activity.MainHomeActivity"
+            android:label="@string/title_activity_main_home"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="cn.wonders.pos_qdg.activity.ManageActivity"
+            android:label="@string/title_activity_manage"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="cn.wonders.pos_qdg.activity.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="cn.wonders.pos_qdg.activity.PeopleManagementActivity"
+            android:label="@string/title_activity_people_management" >
+        </activity>
+        <activity
+            android:name="cn.wonders.pos_qdg.activity.ChangePasswordActivity"
+            android:label="@string/title_activity_change_password" >
+        </activity>
+        <activity
+            android:name="cn.wonders.pos_qdg.activity.ConsumeStandardActivity"
+            android:label="@string/title_activity_consume_standard" >
+        </activity>
+        <activity
+            android:name="cn.wonders.pos_qdg.activity.ConsumeQuickActivity"
+            android:label="@string/title_activity_consume_standard" >
+        </activity>
+        <activity
+            android:name="cn.wonders.pos_qdg.activity.SettingUpActivity"
+            android:label="@string/title_activity_setting_up" >
+        </activity>
+        <activity
+            android:name="cn.wonders.pos_qdg.activity.BreakfastSettingActivity"
+            android:label="@string/title_activity_setting_up" >
+        </activity>
+        <activity
+            android:name="cn.wonders.pos_qdg.activity.ParameterSettingActivity"
+            android:label="@string/title_activity_parameter_setting" >
+        </activity>
+        <activity
+            android:name="cn.wonders.pos_qdg.activity.AppParameterActivity"
+            android:label="@string/title_activity_app_parameter" >
+        </activity>
+        <activity
+            android:name="cn.wonders.pos_qdg.activity.PackageConsumeActivity"
+            android:label="@string/title_activity_combo_consume" >
+        </activity>
+        <activity
+            android:name="cn.wonders.pos_qdg.activity.QueryTradeActivity"
+            android:label="@string/title_activity_query_trade" >
+        </activity>
+        <activity
+            android:name="cn.wonders.pos_qdg.activity.QueryStatusActivity"
+            android:label="@string/title_activity_query_status" >
+        </activity>
+        <activity
+            android:name="cn.wonders.pos_qdg.activity.SystemParameterActivity"
+            android:label="@string/title_activity_system_parameter" >
+        </activity>
+        <activity
+            android:name="cn.wonders.pos_qdg.activity.DownloadParameterActivity"
+            android:label="@string/title_activity_download_parameter" >
+        </activity>
+        <activity
+            android:name="cn.wonders.pos_qdg.activity.KeyManageActivity"
+            android:label="@string/title_activity_key_manage" >
+        </activity>
+        <activity
+            android:name="cn.wonders.pos_qdg.activity.CommunicationParameterActivity"
+            android:label="@string/title_activity_communication_parameter" >
+        </activity>
+        <activity
+            android:name="cn.wonders.pos_qdg.activity.MerchantParameterActivity"
+            android:label="@string/title_activity_merchant" >
+        </activity>
+    </application>
+
+</manifest>

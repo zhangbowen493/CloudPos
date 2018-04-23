@@ -1,0 +1,74 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/act_bg"
+    android:orientation="vertical"
+    tools:context=".CommunicationParameterActivity" >
+
+    <include
+        android:id="@+id/act_top"
+        layout="@layout/activity_title" />
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="83dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="30dp"
+        >
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TPDU："
+            android:textSize="32sp"
+            android:textColor="#fff"
+            />
+        <EditText 
+            android:id="@+id/edt_communication_tpdu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="32sp"
+            android:textColor="#fff"
+            android:background="@null"
+            />
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="83dp"
+        android:orientation="horizontal"
+        android:background="#505979"
+        android:gravity="center_vertical"
+        android:paddingLeft="30dp"
+        >
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="商户号："
+            android:textColor="#fff"
+            android:textSize="32sp"
+            />
+        <EditText 
+            android:id="@+id/edt_communication_shanghu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:textColor="#fff"
+            android:textSize="32sp"
+            />
+    </LinearLayout>
+    
+    <Button 
+        android:id="@+id/btn_communication_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="保存"
+        android:textColor="#fff"
+        android:layout_marginLeft="376dp"
+        android:layout_marginRight="376dp"
+        android:layout_marginTop="50dp"
+        android:textSize="32sp"
+        android:background="@drawable/btn_bg_green"
+        />
+    
+
+</LinearLayout>

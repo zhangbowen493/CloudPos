@@ -1,0 +1,816 @@
+package cn.wonders.pos_qdg.activity;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.Environment;
+import android.os.Handler;
+import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.Window;
+import android.widget.TextView;
+import cn.wonders.pos_qdg.R;
+import cn.wonders.pos_qdg.app.BaseActivity;
+import cn.wonders.pos_qdg.app.CloudposApplication;
+import cn.wonders.pos_qdg.bean.HttpParameters;
+import cn.wonders.pos_qdg.bean.TradingBean;
+import cn.wonders.pos_qdg.db.TradingAbnormalDao;
+import cn.wonders.pos_qdg.db.TradingDao;
+import cn.wonders.pos_qdg.db.TradingHistoryDao;
+import cn.wonders.pos_qdg.net.CPHttpClientUtil;
+import cn.wonders.pos_qdg.tool8583.Connect;
+import cn.wonders.pos_qdg.update.UpdateInfo;
+import cn.wonders.pos_qdg.update.UpdateInfoService;
+import cn.wonders.pos_qdg.util.CustomDialog;
+import cn.wonders.pos_qdg.util.LogUtil;
+import cn.wonders.pos_qdg.util.LogcatHelper;
+import cn.wonders.pos_qdg.util.SPUtils;
+import cn.wonders.pos_qdg.util.ScreenManager;
+import cn.wonders.pos_qdg.util.TimerTools;
+import cn.wonders.pos_qdg.util.ToastUtil;
+import cn.wonders.pos_qdg.util.UpUtils;
+import cn.wonders.pos_qdg.util.ZipUtil;
+
+/**
+ * 管理
+ * 
+ * @author Administrator
+ * 
+ */
+public class ManageActivity extends BaseActivity implements OnClickListener {
+
+	private static ManageActivity manageActivity;
+	public static final int UPDATE = 0;
+	public static final int notTPDU = 10;
+	public static final int UPDATEFAIL = 11;
+	protected static final int Manage_UNSginOK = 12;
+	protected static final int Manage_UNSginFild = 13;
+	private Activity mActivity;
+	private String shanghu;
+	public static ProgressDialog dialog;
+	private CustomDialog.Builder builder = new CustomDialog.Builder(this); 
+	public static ManageActivity getInstance() {
+		if (manageActivity == null) {
+			manageActivity = new ManageActivity();
+		}
+		return manageActivity;
+	}
+
+	Handler handler = new Handler() {
+		public void handleMessage(android.os.Message msg) {
+			switch (msg.what) {
+			case notTPDU:
+				ToastUtil.showLong(mActivity, "请配置参数TPDU！");
+				application.setIsServerUp(false);
+				break;
+			case UPDATE:
+				// 如果有更新就提示
+				if (isNeedUpdate()) {
+					showUpdateDialog();
+				} else {
+					ToastUtil.showLong(mActivity, "当前已经是最新版本");
+				}
+				break;
+			case UPDATEFAIL:
+				ToastUtil.showLong(mActivity, "版本更新失败");
+				break;
+			case 1:
+				dialog.dismiss();
+				break;
+			case 2:
+				dialog.dismiss();
+				ToastUtil.showLong(mActivity, "当前没有流水需要上传");
+				break;
+			case 3:
+				ToastUtil.showLong(mActivity, "正在上传，请稍后……");
+				break;
+			case 4:
+				ToastUtil.showLong(mActivity, "准备上传……");
+				break;
+			case 5:
+				UpUtils up=new UpUtils(mActivity,handler);
+				up.signIn();
+				break;
+			case 6:
+				dialog.dismiss();
+				ToastUtil.showLong(mActivity, "请检查网络环境及系统参数！");
+				break;
+			case 7:
+				respCode=(String) msg.obj;
+				if (respCode!=null) {
+					ToastUtil.showLong(mActivity, "流水上传返回码：" + respCode);
+				}
+				break;
+			case 8:
+				dialog.dismiss();
+				ToastUtil.showLong(mActivity, "未送银联流水："+nUpUnionpayAmount+"条;\n已送银联未送后台流水： " 
+						+ nUpServiceAmount + "条;\n异常流水："+abnormalAmount+"条;\n历史流水："+historyAmount+"条");
+				break;
+			case 9:
+				dialog.dismiss();
+				break;
+			case MainActivity.UNSginOK:
+				ToastUtil.showShort(mActivity, "批结成功，签到成功，当前批次号："+CloudposApplication.pici);
+				dialog.dismiss();
+				break;
+			case MainActivity.UNSginFild:
+				ToastUtil.showShort(mActivity, "批结成功，签到失败，请重新签到");
+				dialog.dismiss();
+				break;
+			case 14:
+				ToastUtil.showShort(mActivity, "连续上送失败，停止上送银联");
+				break;
+			case 15:
+				int a=msg.arg1;
+				int b=msg.arg2;
+				ToastUtil.showShort(mActivity, "上送成功流水"+a+"条\n上送失败流水"+b+"条");
+				break;
+			case 16:
+				dialog.dismiss();
+				ToastUtil.showShort(mActivity, "后台上送成功");
+				break;
+			case 17:
+				dialog.dismiss();
+				ToastUtil.showShort(mActivity, "后台上送失败");
+				break;
+			case 18:
+				dialog.dismiss();
+				ToastUtil.showLong(mActivity, "后台正在上送流水，请稍后……");
+				break;
+			default:
+				break;
+			}
+		};
+	};
+	/**
+	 * 流水表总数 未上送银联 上送银联但未上送后台 异常流水数据
+	 */
+	private Long  nUpUnionpayAmount, nUpServiceAmount,historyAmount,
+	abnormalAmount = (long) 0;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_manage);
+		mActivity = ManageActivity.this;
+		application = CloudposApplication.getInstance();
+		initView();
+		initData();
+	}
+
+	private void initData() {
+		Integer mOperstorLV = (Integer) SPUtils.get(mActivity,
+				SPUtils.CURRENT_OPERATOR_LV, 0);
+		shanghu = SPUtils.getString(mActivity, SPUtils.ShanghuNo, "");
+		if (mOperstorLV == 0) {
+			// mRL_MA_manage.setVisibility(View.INVISIBLE);
+		}
+		dialog = new ProgressDialog(mActivity);
+		dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);// 设置进度条的形式为圆形转动的进度条
+		dialog.setCancelable(false);// 设置是否可以通过点击Back键取消
+		dialog.setCanceledOnTouchOutside(false);// 设置在点击Dialog外是否取消Dialog进度条
+		dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+			@Override
+			public void onDismiss(DialogInterface dialog) {
+			}
+		});
+		dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+			@Override
+			public void onCancel(DialogInterface dialog) {
+			}
+		});
+		dialog.setMessage("正在处理，请等待……");
+	}
+
+	private void initView() {
+		findViewById(R.id.activity_title_btn_back).setOnClickListener(this);
+		findViewById(R.id.btn_liushuiclearing).setOnClickListener(this);
+		findViewById(R.id.btn_query_status).setOnClickListener(this);
+		findViewById(R.id.btn_sign_out).setOnClickListener(this);
+		findViewById(R.id.btn_options).setOnClickListener(this);
+		findViewById(R.id.btn_log_upload).setOnClickListener(this);
+		findViewById(R.id.btn_upabnormal).setOnClickListener(this);
+		findViewById(R.id.btn_clean).setOnClickListener(this);
+		TextView _BCTV_Title = (TextView) findViewById(R.id.activity_title_tv_name);
+		//		findViewById(R.id.btn_save).setOnClickListener(this);
+		_BCTV_Title.setText("管理");
+		findViewById(R.id.activity_title_btn_back).setOnClickListener(this);
+
+		findViewById(R.id.btn_ma_update).setOnClickListener(this);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.manage, menu);
+		return true;
+	}
+
+	/**
+	 * 获取升级信息
+	 */
+	private UpdateInfo info;
+	/**
+	 * 升级时交互使用
+	 */
+	private ProgressDialog pBar;
+	private CloudposApplication application;
+	private String respCode;
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch (v.getId()) {
+		case R.id.activity_title_btn_back:
+			// 返回
+			myBack();
+			break;
+		case R.id.btn_query_status:
+			// 状态查询
+			query();
+			break;
+		case R.id.btn_sign_out:
+			// 批结算
+			groupOfSettlement();
+			break;
+		case R.id.btn_options:
+			// 设置
+			startActivity(new Intent(mActivity, ParameterSettingActivity.class));
+			break;
+		case R.id.btn_liushuiclearing:
+			// 流水上送
+			if (application.isServerUp) {
+				ToastUtil.showLong(mActivity, "后台正在上送流水，请稍后手动上送……");
+			}else{
+				upNormalLiushui();
+			}
+			break;
+		case R.id.btn_ma_update:
+			// 更新系统版本
+			getVersionUpdate();
+			break;
+		case R.id.btn_log_upload:
+			// 上送日志文件
+			upLog();
+			break;
+		case R.id.btn_upabnormal:
+			// 手动上送异常流水
+			upAbnormalLiushui();
+			break;
+		case R.id.btn_clean:
+			// 手动增加流水
+			dialog.show();
+			save();
+			break;
+			//		case R.id.btn_clean:
+			//			// 手动清理流水
+			//			dialog.show();
+			//			clean();
+			//			break;
+		default:
+			break;
+		}
+	}
+
+	private void upAbnormalLiushui() {
+		builder.setMessage("是否上送异常流水？");  
+		builder.setTitle("提示");  
+		builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {  
+			public void onClick(DialogInterface dialog, int which) {  
+				dialog.dismiss();  
+				abnormalLiushuiclearing();
+			}  
+		});  
+
+		builder.setNegativeButton("取消",  
+				new android.content.DialogInterface.OnClickListener() {  
+			public void onClick(DialogInterface dialog, int which) {  
+				dialog.dismiss();  
+			}  
+		});  
+
+		builder.create().show();
+	}
+
+	private void upLog() {
+		builder.setMessage("是否上送日志文件？");  
+		builder.setTitle("提示");  
+		builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {  
+			public void onClick(DialogInterface dialog, int which) {  
+				dialog.dismiss();  
+				uploadLogFile();
+			}  
+		});  
+
+		builder.setNegativeButton("取消",  
+				new android.content.DialogInterface.OnClickListener() {  
+			public void onClick(DialogInterface dialog, int which) {  
+				dialog.dismiss();  
+			}  
+		});  
+
+		builder.create().show();
+	}
+
+	private void upNormalLiushui() {
+		builder.setMessage("是否上送流水？");  
+		builder.setTitle("提示");  
+		builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {  
+			public void onClick(DialogInterface dialog, int which) {  
+				dialog.dismiss();  
+				liushuiclearing();
+			}  
+		});  
+
+		builder.setNegativeButton("取消",  
+				new android.content.DialogInterface.OnClickListener() {  
+			public void onClick(DialogInterface dialog, int which) {  
+				dialog.dismiss();  
+			}  
+		});  
+
+		builder.create().show();
+	}
+
+	private void groupOfSettlement() {
+		builder.setMessage("是否执行批结算操作？（更新设备批次号并签到）");  
+		builder.setTitle("提示");  
+		builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {  
+			public void onClick(DialogInterface dialog, int which) {  
+				dialog.dismiss();  
+				pijiesuan();
+			}  
+		});  
+
+		builder.setNegativeButton("取消",  
+				new android.content.DialogInterface.OnClickListener() {  
+			public void onClick(DialogInterface dialog, int which) {  
+				dialog.dismiss();  
+			}  
+		});  
+
+		builder.create().show();
+	}
+
+	private void clean() {
+		// TODO Auto-generated method stub
+		dialog.show();
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				TradingDao dao = TradingDao.getInstance(mActivity);
+				Long i = dao.clearAll();
+				TradingAbnormalDao taDao=TradingAbnormalDao.getInstance(mActivity);
+				Long j = taDao.clearAll();
+				TradingHistoryDao hisDao=TradingHistoryDao.getInstance(mActivity);
+				Long k = hisDao.clearAll();
+				LogUtil.e("删除消费流水" + i + "条\n刪除异常流水"+j+"条\n刪除历史流水"+k+"条");
+				handler.sendEmptyMessage(9);
+			}
+		}).start();
+
+	}
+
+	private void uploadLogFile() {
+		try {
+			dialog.show();
+			String zipfileName = LogcatHelper.filename.split("\\.")[0] + ".zip";
+			File file = new File(LogcatHelper.PATH_LOGCAT + "/"
+					+ LogcatHelper.filename);
+			if (file.exists()) {
+				ToastUtil.showShort(mActivity, "正在上送日志文件……");
+				ZipUtil.zip(LogcatHelper.PATH_LOGCAT + "/"
+						+ LogcatHelper.filename, LogcatHelper.PATH_ZIP_LOGCAT
+						+ "/" + zipfileName);
+				String path = CPHttpClientUtil.getUploadLogFile(mActivity);
+				LogUtil.d("上传的日志文件名为：" + LogcatHelper.filename);
+				LogUtil.d("压缩的日志文件名为：" + zipfileName);
+				File logFile = new File(LogcatHelper.PATH_ZIP_LOGCAT,
+						zipfileName);
+				HttpParameters params = new HttpParameters();
+				params.add("fileName", zipfileName);
+				params.add("terminalNo",
+						SPUtils.getString(mActivity, SPUtils.TerminalNo, ""));
+				StringBuilder sb = new StringBuilder();
+				for (int i = 0; i < params.size(); i++) {
+					sb.append(params.getKey(i));
+					sb.append("=");
+					sb.append(params.getValue(i));
+					sb.append("&");
+				}
+				String m = sb.toString();
+				m = m.substring(0, m.length() - 1);
+				path = path + m;
+				LogUtil.d("上传文件路径：" + path);
+				LogcatHelper.uploadLogFileWithOutDelete(path, logFile);
+			} else {
+				dialog.dismiss();
+				ToastUtil.showShort(mActivity, "日志文件已上送");
+				LogcatHelper.getInstance(mActivity);
+				LogcatHelper.start();
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	// *************************************************************************
+	private void getVersionUpdate() {
+		ToastUtil.showLong(mActivity, "正在检查版本更新..");
+		// 自动检查有没有新版本 如果有新版本就提示更新
+		new Thread() {
+			public void run() {
+				try {
+					UpdateInfoService updateInfoService = new UpdateInfoService(
+							mActivity);
+					info = updateInfoService.getUpDateInfo();
+					handler.sendEmptyMessage(UPDATE);
+				} catch (Exception e) {
+					e.printStackTrace();
+					handler.sendEmptyMessage(UPDATEFAIL);
+				}
+			};
+		}.start();
+	}
+
+	private void showUpdateDialog() {
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setIcon(android.R.drawable.ic_dialog_info);
+		builder.setTitle("请升级APP至版本" + info.getVersion());
+		builder.setMessage(info.getDescription());
+		builder.setCancelable(false);
+
+		builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				if (Environment.getExternalStorageState().equals(
+						Environment.MEDIA_MOUNTED)) {
+					downFile(info.getUrl());
+				} else {
+					ToastUtil.showLong(mActivity, "SD卡不可用，请插入SD卡");
+				}
+			}
+		});
+		builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+			}
+
+		});
+		builder.create().show();
+	}
+
+	private boolean isNeedUpdate() {
+
+		String v = info.getVersion(); // 最新版本的版本号
+		if (v.equals(getVersion())) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	/**
+	 * 获取当前版本的版本号
+	 * 
+	 * @return
+	 */
+	private String getVersion() {
+		try {
+			PackageManager packageManager = getPackageManager();
+			PackageInfo packageInfo = packageManager.getPackageInfo(
+					getPackageName(), 0);
+			return packageInfo.versionName;
+		} catch (NameNotFoundException e) {
+			e.printStackTrace();
+			return "版本号未知";
+		}
+	}
+
+	void downFile(final String url) {
+		pBar = new ProgressDialog(mActivity);
+		pBar.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+		pBar.setTitle("正在下载");
+		pBar.setMessage("请稍候...");
+		pBar.setProgress(0);
+		pBar.show();
+		new Thread() {
+			public void run() {
+				HttpClient client = new DefaultHttpClient();
+				HttpGet get = new HttpGet(url);
+				HttpResponse response;
+				try {
+					response = client.execute(get);
+					HttpEntity entity = response.getEntity();
+					int length = (int) entity.getContentLength(); // 获取文件大小
+					pBar.setMax(length); // 设置进度条的总长度
+					InputStream is = entity.getContent();
+					FileOutputStream fileOutputStream = null;
+					if (is != null) {
+						File file = new File(
+								Environment.getExternalStorageDirectory(),
+								"CloudPOS_Wonders_zbw.apk");
+						fileOutputStream = new FileOutputStream(file);
+						byte[] buf = new byte[1024];
+						int ch = -1;
+						int process = 0;
+						while ((ch = is.read(buf)) != -1) {
+							fileOutputStream.write(buf, 0, ch);
+							process += ch;
+							pBar.setProgress(process);
+						}
+
+					}
+					fileOutputStream.flush();
+					if (fileOutputStream != null) {
+						fileOutputStream.close();
+					}
+					down();
+				} catch (ClientProtocolException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+
+		}.start();
+	}
+
+	void down() {
+		handler.post(new Runnable() {
+			public void run() {
+				pBar.cancel();
+				update();
+			}
+		});
+	}
+
+	/**
+	 * 安装文件，一般固定写法
+	 */
+	void update() {
+
+		ToastUtil.showLong(mActivity, "请在安装完成后，重启程序");
+		Intent intent = new Intent(Intent.ACTION_VIEW);
+		intent.setDataAndType(Uri.fromFile(new File(Environment
+				.getExternalStorageDirectory(), "CloudPOS_Wonders_zbw.apk")),
+				"application/vnd.android.package-archive");
+		startActivity(intent);
+	}
+
+	// *************************************************************************
+
+	/**
+	 * 查询流水及状态信息
+	 */
+	public void query() {
+		dialog.show();
+		new Thread(new Runnable() {
+
+			@Override
+			public void run() {
+				TradingDao dao = TradingDao.getInstance(mActivity);
+				//查询未送银联流水	
+				nUpUnionpayAmount = dao.getNoYLUpdateCount();
+				//查询已上送银联未上送服务器流水	
+				nUpServiceAmount=dao.getupYLnoUPS();
+				//查询历史表流水
+				historyAmount= TradingHistoryDao.getInstance(mActivity).getCount();
+				//查询异常表流水
+				abnormalAmount=TradingAbnormalDao.getInstance(mActivity).getCount();
+				handler.sendEmptyMessage(8);
+			}
+		}).start();
+
+	}
+	public static Class lock = ManageActivity.class;  
+	public static boolean isUpdating;
+	/**
+	 * 流水上送
+	 */
+	private void liushuiclearing() {
+		dialog.show();
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				isUpdating=true;
+				while(isUpdating){
+						// 结算
+						String miyao = SPUtils.getString(mActivity, SPUtils.UPK, "");
+						String fuwuqiip = SPUtils.getString(mActivity, SPUtils.IP, "");
+						String fuwuqiport = SPUtils.getString(mActivity, SPUtils.port,
+								"");
+						String zhongduanID = SPUtils.getString(mActivity,
+								SPUtils.zhongduanID, "");
+						if (miyao == "" || fuwuqiip == "" || fuwuqiport == ""
+								|| zhongduanID == "") {
+							handler.sendEmptyMessage(6);
+						} else {
+							LogUtil.e("application.isServerUp判断");
+							if (application.isServerUp) {
+								if (UpUtils.tag==1) {
+									isUpdating=false;
+									handler.sendEmptyMessage(18);
+								}else if (UpUtils.tag==2) {
+									UpUtils up=new UpUtils(mActivity, handler,application);
+									up.uploadLiushui(2);
+								}else{
+									LogUtil.e("TIME", "tag不是1不是2");
+								}
+							}else{
+								UpUtils up=new UpUtils(mActivity, handler,application);
+								up.uploadLiushui(2);
+							}
+						}
+					}; 
+					LogUtil.e("isUpdating结束");
+				}
+		}).start();
+	}
+	/**
+	 * 异常流水上送
+	 */
+	private void abnormalLiushuiclearing() {
+		dialog.show();
+		new Thread(new Runnable() {
+
+			@Override
+			public void run() {
+				// 结算
+				String miyao = SPUtils.getString(mActivity, SPUtils.UPK, "");
+				String fuwuqiip = SPUtils.getString(mActivity, SPUtils.IP, "");
+				String fuwuqiport = SPUtils.getString(mActivity, SPUtils.port,
+						"");
+				String zhongduanID = SPUtils.getString(mActivity,
+						SPUtils.zhongduanID, "");
+				if (miyao == "" || fuwuqiip == "" || fuwuqiport == ""
+						|| zhongduanID == "") {
+					handler.sendEmptyMessage(6);
+				} else {
+					UpUtils up=new UpUtils(mActivity, handler,application);
+					up.uploadAbnormalLiushui();
+				}
+			}
+		}).start();
+	}
+
+	/**
+	 * 批结
+	 */
+	public void pijiesuan() {
+		dialog.show();
+		final String field48 = "00000000000000000000000000000000000000000000000000000000000000";
+		new Thread(new Runnable() {
+
+			@Override
+			public void run() {
+				String tpdu = SPUtils.getString(mActivity, SPUtils.TPDU, "");
+				if (tpdu.equals("")) {
+					handler.sendEmptyMessage(notTPDU);
+				} else {
+					new Connect().BalanceAccounts("0500", SPUtils
+							.getSerialData(mActivity), SPUtils.getString(
+									mActivity, SPUtils.zhongduanID, ""), shanghu,
+									field48, "156", "00" + CloudposApplication.pici
+									+ "201", "123", mActivity, tpdu,handler,dialog);
+				}
+			}
+		}).start();
+	}
+
+	private void myBack() {
+		// TODO Auto-generated method stub
+		ScreenManager screenManager = CloudposApplication.getInstance()
+				.getScreenManager();
+		screenManager.popActivity(mActivity);
+	}
+
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		// TODO Auto-generated method stub
+		if (keyCode == KeyEvent.KEYCODE_BACK) {
+			myBack();
+		}
+
+		return super.onKeyDown(keyCode, event);
+	}
+
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+	}
+
+
+	/**
+	 * 屏蔽home键 无法放到BaseActivity 每个页面单独处理
+	 */
+	@Override
+	public void onAttachedToWindow() {
+		super.onAttachedToWindow();
+		Window win = getWindow();
+		try {
+			Class<?> cls = win.getClass();
+			final Class<?>[] PARAM_TYPES = new Class[] { int.class };
+			Method method = cls.getMethod("addCustomFlags", PARAM_TYPES);
+			method.setAccessible(true);
+			method.invoke(win, new Object[] { 0x00000001 });
+		} catch (Exception e) {
+			// handle the error here.
+		}
+	}
+
+	public void save() {
+		dialog.show();
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+
+				TradingDao liushuiDao = TradingDao.getInstance(mActivity);
+				TradingBean mLiushuiBean = new TradingBean();
+				ArrayList<TradingBean> list = new ArrayList<TradingBean>();
+				for (int i = 0; i < 300; i++) {
+					long currentTimeMillis = System.currentTimeMillis();
+					mLiushuiBean.setWorkerID(Math.round(Math.random()*1000)+"");
+					mLiushuiBean.setStyle("01");
+					mLiushuiBean.setWorkerID("5058");
+					mLiushuiBean.setCardNumber("6231700180019513082");
+					mLiushuiBean.setTranMoney("0.5");
+					String str =String.valueOf(Math.round(Math.random()*1000000));
+					mLiushuiBean.setTranList(str);
+					mLiushuiBean.setTranTime(currentTimeMillis + "");
+					mLiushuiBean.setSendUPTime("1121");
+					mLiushuiBean.setSyncTime("0");
+					mLiushuiBean.setIsUpdate(0);
+					mLiushuiBean.setIsAbnormalUP(1);
+					mLiushuiBean.setisQuota(1);
+					mLiushuiBean.setBatchNumber("2048");
+
+					mLiushuiBean.setCard_AIP_T("82");
+					mLiushuiBean.setCard_AIP_L("02");
+					mLiushuiBean.setCard_AIP_V("7c00");
+					mLiushuiBean.setCard_AFL_T("94");
+					mLiushuiBean.setCard_AFL_L("0c");
+					mLiushuiBean.setCard_AFL_V("100507011801010028010100");
+					mLiushuiBean.setCard_ATC_T("9F36");
+					mLiushuiBean.setCard_ATC_L("02");
+					mLiushuiBean.setCard_ATC_V("0068");
+					mLiushuiBean.setCard_TC_T("9F26");
+					mLiushuiBean.setCard_TC_L("08");
+					mLiushuiBean.setCard_TC_V("B03730C015A15CC4");
+					mLiushuiBean.setCard_IDD_T("9F10");
+					mLiushuiBean.setCard_IDD_L("08");
+					mLiushuiBean.setCard_IDD_V("0701010390000001");
+					mLiushuiBean.setCard_2MMSD_T("57");
+					mLiushuiBean.setCard_2MMSD_L("13");
+					mLiushuiBean
+					.setCard_2MMSD_V("6231700180000502292D24012200000000177F");
+					mLiushuiBean.setCard_Number_T("5F34");
+					mLiushuiBean.setCard_Number_L("01");
+					mLiushuiBean.setCard_Number_V("01");
+					mLiushuiBean.setCard_Tran_Prama_T("9F6C");
+					mLiushuiBean.setCard_Tran_Prama_L("02");
+					mLiushuiBean.setCard_Tran_Prama_V("0000");
+
+					mLiushuiBean.setCard_Status_T("90");
+					mLiushuiBean.setCard_Status_L("00");
+
+					if (mLiushuiBean != null) {
+						list.clear();
+						list.add(mLiushuiBean);
+						liushuiDao.addLiushuiList(list);
+						LogUtil.e("第" + i + "条：" + mLiushuiBean.toString());
+					}
+				}
+				handler.sendEmptyMessage(9);
+			}
+		}).start();
+
+	}
+
+}

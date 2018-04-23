@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PeopleManagementActivity"
+    android:background="@color/act_bg"  >
+
+    <include
+        android:id="@+id/act_top"
+        layout="@layout/activity_title" />
+
+    <RelativeLayout
+        android:id="@+id/rl_add_people"
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:background="@color/green_bg"
+        android:clickable="true" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_add" />
+
+            <TextView
+                android:id="@+id/tv_add_operator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textSize="48sp"
+                android:textColor="#fff"
+                android:gravity="center"
+                android:text="添加操作员" />
+        </LinearLayout>
+    </RelativeLayout>
+<ListView 
+    android:id="@+id/lv_people"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:divider="#1e263d"
+    android:dividerHeight="2dp"
+    ></ListView>
+
+</LinearLayout>

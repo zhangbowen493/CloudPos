@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="105dp" 
+    android:background="@color/act_bg">
+    
+    <TextView 
+        android:id="@+id/tv_people_item_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text="00"
+        android:textSize="80sp"
+        android:textColor="#4fc6f7"
+        android:layout_marginLeft="82dp"
+        />
+    
+    <ImageView 
+        android:id="@+id/iv_people_item_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="35dp"
+        android:src="@drawable/icon_delete"
+        />
+    <ImageView 
+        android:id="@+id/iv_people_item_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="113dp"
+        android:layout_toLeftOf="@id/iv_people_item_delete"
+        android:src="@drawable/icon_change"
+        />
+
+</RelativeLayout>

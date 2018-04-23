@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:background="@color/white"
+	android:padding="3.0dip"
+	>
+	<ImageView 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:background="@drawable/ic_launcher"
+	    android:id="@+id/downloader_notification_icon"
+	    />
+	<TextView 
+	    android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_toRightOf="@id/downloader_notification_icon"
+		android:layout_marginLeft="5.0dip"
+		android:textSize="16.0sp"
+		android:textColor="@color/black"
+		android:text="@string/upgrade_notice"
+	    />
+	<TextView 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:textColor="@color/black"
+	    android:layout_alignParentRight="true"
+	    android:layout_marginRight="3.0dip"
+	    android:id="@+id/downloader_notification_progress_num_tv"
+	    />
+	
+	<ProgressBar 
+		android:layout_width="fill_parent" 
+		android:layout_height="10.0dip"
+		android:layout_below="@id/downloader_notification_icon"
+		android:layout_alignParentRight="true"
+		android:paddingTop="5.0dip"
+		style="?android:attr/progressBarStyleHorizontal"
+		android:progressDrawable="@drawable/progress_style"
+		android:id="@+id/downloader_notification_pb"
+		/>
+</RelativeLayout>

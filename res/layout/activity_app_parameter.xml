@@ -1,0 +1,165 @@
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/act_bg"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/act_top"
+        layout="@layout/activity_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="83dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="30dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="消费页面退出密码设置:"
+            android:textColor="#fff"
+            android:textSize="32sp" />
+
+        <EditText
+            android:id="@+id/edt_app_parameter_quit_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:singleLine="true"
+            android:textColor="#fff"
+            android:textSize="32sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="83dp"
+        android:background="#505979"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="30dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="消费最大金额:"
+            android:textColor="#fff"
+            android:textSize="32sp" />
+
+        <EditText
+            android:id="@+id/edt_app_parameter_max_money"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="单位/元"
+            android:singleLine="true"
+            android:textColor="#fff"
+            android:textSize="32sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="83dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="30dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="交易上送时间:"
+            android:textColor="#fff"
+            android:textSize="32sp" />
+
+        <EditText
+            android:id="@+id/edt_service_shangsong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:singleLine="true"
+            android:textColor="#fff"
+            android:textSize="32sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="83dp"
+        android:background="#505979"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="30dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="交易流水阀值:"
+            android:textColor="#fff"
+            android:textSize="32sp" />
+
+        <EditText
+            android:id="@+id/edt_threshold_level"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:singleLine="true"
+            android:textColor="#fff"
+            android:textSize="32sp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="83dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="30dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="历史流水清理周期:"
+            android:textColor="#fff"
+            android:textSize="32sp" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup_cleanhis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp">
+
+            <RadioButton
+                android:id="@+id/radiobtn_oneweek"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:textSize="32sp"
+                android:text="一周" />
+
+            <RadioButton
+                android:id="@+id/radiobtn_twoweek"
+                android:layout_marginLeft="80dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="32sp"
+                android:text="两周" />
+
+        </RadioGroup>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_app_parameter_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="376dp"
+        android:layout_marginRight="376dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/btn_bg_green"
+        android:text="保存"
+        android:textColor="#fff"
+        android:textSize="32sp" />
+
+</LinearLayout>

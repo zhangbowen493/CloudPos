@@ -1,0 +1,131 @@
+K 25
+svn:wc:ra_dav:version-url
+V 182
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/1132/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/activity
+END
+AppParameterActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 208
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/1104/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/activity/AppParameterActivity.java
+END
+PackageConsumeActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 209
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/957/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/activity/PackageConsumeActivity.java
+END
+QueryTradeActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 205
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/957/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/activity/QueryTradeActivity.java
+END
+ChangePasswordActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 209
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/957/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/activity/ChangePasswordActivity.java
+END
+QueryStatusActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 206
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/957/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/activity/QueryStatusActivity.java
+END
+MainActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 200
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/1036/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/activity/MainActivity.java
+END
+KeyManageActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 204
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/957/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/activity/KeyManageActivity.java
+END
+CommunicationParameterActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 217
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/974/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/activity/CommunicationParameterActivity.java
+END
+ConsumeStandardActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 211
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/1219/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/activity/ConsumeStandardActivity.java
+END
+ConsumeQuotaActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 208
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/1219/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/activity/ConsumeQuotaActivity.java
+END
+ManageActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 202
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/1219/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/activity/ManageActivity.java
+END
+BreakfastSettingActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 211
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/957/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/activity/BreakfastSettingActivity.java
+END
+DownloadParameterActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 212
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/957/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/activity/DownloadParameterActivity.java
+END
+SystemParameterActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 210
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/974/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/activity/SystemParameterActivity.java
+END
+LoginActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 200
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/957/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/activity/LoginActivity.java
+END
+MerchantParameterActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 212
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/activity/MerchantParameterActivity.java
+END
+MainHomeActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 204
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/1033/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/activity/MainHomeActivity.java
+END
+ParameterSettingActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 211
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/activity/ParameterSettingActivity.java
+END
+PeopleManagementActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 211
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/957/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/activity/PeopleManagementActivity.java
+END
+ConsumeQuickActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 208
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/1219/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/activity/ConsumeQuickActivity.java
+END
+SettingUpActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 204
+/svn/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%96%BD/!svn/ver/945/%E8%81%94%E8%BF%AAPOS/%E7%A7%BB%E5%8A%A8%E7%AB%AF/%E5%AE%89%E5%8D%93/branches/developer-qg1124/src/cn/wonders/pos_qdg/activity/SettingUpActivity.java
+END

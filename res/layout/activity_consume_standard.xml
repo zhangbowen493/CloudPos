@@ -1,0 +1,248 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/act_bg"
+    android:orientation="vertical"
+    tools:context="cn.wonders.pos_qdg.activity.ConsumeStandardActivity" >
+
+    <include
+        android:id="@+id/act_top"
+        layout="@layout/activity_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="202dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="48dp"
+            android:layout_marginRight="35dp"
+            android:src="@drawable/icon_pig" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:text="总金额"
+            android:textColor="@color/white"
+            android:textSize="52sp" />
+
+        <EditText
+            android:id="@+id/et_money_subitem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+			android:layout_weight="1"
+            android:layout_marginLeft="33dp"
+            android:layout_marginRight="33dp"
+            android:background="@drawable/et_bg"
+            android:digits="1234567890."
+            android:hint="消费金额 "
+            android:inputType="number"
+            android:singleLine="true"
+            android:textColor="#fff"
+            android:textColorHint="#fff"
+            android:textSize="45sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:text="元"
+            android:textColor="@color/white"
+            android:textSize="52sp" />
+
+        <!--
+             <TextView
+            android:id="@+id/et_money_sum"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="120dp"
+            android:background="@drawable/et_bg"
+            android:textSize="50sp"
+            android:textColor="#fff"
+            android:gravity="center_vertical"
+            android:text=" 0 元" />
+        -->
+
+        <Button
+            android:id="@+id/btn_affirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/btn_bg_green"
+            android:text="确认"
+            android:textColor="#fff"
+            android:textSize="62sp" />
+    </LinearLayout>
+
+    <!--
+         <EditText
+        android:id="@+id/et_money_subitem"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:textSize="45sp"
+        android:layout_marginLeft="33dp"
+        android:layout_marginRight="33dp"
+        android:background="@drawable/et_bg"
+        android:textColor="#fff"
+        android:singleLine="true"
+        android:textColorHint="#fff"
+        android:digits="1234567890."
+        android:inputType="number"
+        android:hint="分项金额" />
+    -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:gravity="center_vertical"
+        android:padding="15dp" >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/iv_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_id" />
+
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/iv_id"
+                android:text="员工ID："
+                android:textColor="@color/white"
+                android:textSize="45sp" />
+
+            <TextView
+                android:id="@+id/tv_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/tv1"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="45sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/iv_consume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_this" />
+
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/iv_consume"
+                android:text="本次消费："
+                android:textColor="@color/white"
+                android:textSize="45sp" />
+
+            <TextView
+                android:id="@+id/tv_consume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/tv2"
+                android:text=" 元"
+                android:textColor="@color/white"
+                android:textSize="45sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center_vertical"
+        android:padding="15dp" >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/iv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_name" />
+
+            <TextView
+                android:id="@+id/tv3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/iv_name"
+                android:text="姓名："
+                android:textColor="@color/white"
+                android:textSize="45sp" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/tv3"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="45sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/iv_balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_car" />
+
+            <TextView
+                android:id="@+id/tv4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/iv_balance"
+                android:text="卡片余额："
+                android:textColor="@color/white"
+                android:textSize="45sp" />
+
+            <TextView
+                android:id="@+id/tv_balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/tv4"
+                android:text="元"
+                android:textColor="@color/white"
+                android:textSize="60sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,28 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    
+    <dimen name="edit_h">40dp</dimen>
+    <!-- activity_title高度 -->
+    <dimen name="widget_h">83dp</dimen>
+    <!-- activity_title左边距 -->
+    <dimen name="widget_ml_low">42dp</dimen>
+    <!-- activity_title右边距 -->
+    <dimen name="widget_mr_low">40dp</dimen>
+    
+    <!-- 字号设置 -->
+    <!-- activity_title字号 -->
+    <dimen name="tv_size_high">32sp</dimen>
+    <dimen name="tv_size">14sp</dimen>
+    <dimen name="tv_size_low">12sp</dimen>
+    
+    <!-- 菜单图标大小 -->
+    <dimen name="menu_3">200dp</dimen>
+    <dimen name="menu_4">160dp</dimen>
+    <dimen name="menu_rl_pt">50dp</dimen>
+    <dimen name="menu_rl_pb">20dp</dimen>
+    <dimen name="menu_tv_mt">20dp</dimen>
+
+</resources>
